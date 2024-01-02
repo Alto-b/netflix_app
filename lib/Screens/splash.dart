@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_ui/Screens/home.dart';
+import 'package:netflix_ui/api/api.dart';
 import 'package:netflix_ui/main.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,8 +14,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     goToHome();
+    getPopularMovies();
+    getTopRated();
+    getNowPlaying();
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {

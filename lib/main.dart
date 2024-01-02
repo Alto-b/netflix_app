@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         // useMaterial3: true,
-        
+        brightness: Brightness.dark,
         scaffoldBackgroundColor:Colors.black 
       ),
       home: const SplashScreen(),
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     HomePage(),
     gamesPage(),
     newHotPage(),
-    myNetflixPage(),
+    MyNetflixPage(),
 
   ];
   @override
