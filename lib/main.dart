@@ -41,8 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int indexNum =0;
   final screens = const [
     HomePage(),
-    gamesPage(),
-    newHotPage(),
+    GamesPage(),
+    NewHotPage(),
     MyNetflixPage(),
 
   ];

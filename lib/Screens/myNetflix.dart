@@ -1,7 +1,9 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_ui/api/api.dart';
+import 'package:netflix_ui/widgets/bottomsheet_profile.dart';
 import 'package:netflix_ui/widgets/custom_slider.dart';
 
 class MyNetflixPage extends StatefulWidget {
@@ -27,16 +29,21 @@ class _MyNetflixPageState extends State<MyNetflixPage> {
         child: Column(
           children: [
             SizedBox(height: 20),
-            Container(
-              height: 70,
-              width: 70,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Image.network(
-                'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png',
+            InkWell(
+              onTap: () {
+                profileswitch(context);
+              },
+              child: Container(
+                height: 70,
+                width: 70,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: Image.network(
+                  'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png',
+                ),
               ),
             ),
             SizedBox(height: 10),

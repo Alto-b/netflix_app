@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_ui/Screens/details_page.dart';
 import 'package:netflix_ui/constant.dart';
 
 class CustomSlider extends StatefulWidget {
@@ -36,17 +37,22 @@ class _CustomSliderState extends State<CustomSlider> {
                physics: const BouncingScrollPhysics(),
                itemCount: widget.sliderList.length,
                itemBuilder: (context,index){
-                 return Padding(
-                   padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
-                   child: ClipRRect(
-                     borderRadius: BorderRadius.circular(8),
-                     child: SizedBox(
-                       height: 150,
-                       width: 150,
-                       child: Image.network(
-                        filterQuality: FilterQuality.high,
-                        fit: BoxFit.cover,
-                        imagePath+widget.sliderList[index]['poster_path']
+                 return GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(),));
+                  },
+                   child: Padding(
+                     padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
+                     child: ClipRRect(
+                       borderRadius: BorderRadius.circular(8),
+                       child: SizedBox(
+                         height: 150,
+                         width: 150,
+                         child: Image.network(
+                          filterQuality: FilterQuality.high,
+                          fit: BoxFit.cover,
+                          imagePath+widget.sliderList[index]['poster_path']
+                         ),
                        ),
                      ),
                    ),
