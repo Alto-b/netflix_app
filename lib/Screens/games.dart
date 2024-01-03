@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_ui/widgets/grid_view_games.dart';
+import 'package:netflix_ui/api/api.dart';
+import 'package:netflix_ui/widgets/list_view_games.dart';
 
 class GamesPage extends StatefulWidget {
   const GamesPage({super.key});
@@ -20,7 +21,8 @@ class _GamesPageState extends State<GamesPage> {
       body:  SingleChildScrollView(
         child: Column(
           children: [
-              Container(color: Colors.grey.shade700,width: double.infinity,
+              Container(
+                color: Colors.grey.shade700,width: double.infinity,
                 child:TextFormField(
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.search, color: Colors.white), 
@@ -35,7 +37,7 @@ class _GamesPageState extends State<GamesPage> {
             SizedBox(height: 20,),
         SizedBox(
           height: 800,
-          child: CustomGridView())
+          child: CustomListView(list: allMoviesList,))
           ],
         ),
       ),

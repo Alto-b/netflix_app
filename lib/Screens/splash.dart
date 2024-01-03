@@ -13,13 +13,15 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    goToHome();
+    getUpcoming();
     getPopularMovies();
     getTopRated();
     getNowPlaying();
+    getAllMovies();
+    goToHome();
     super.initState();
   }
-
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,8 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
   Future<void> goToHome() async{
-    await Future.delayed(const Duration(seconds: 2));
+
+    await Future.delayed(const Duration(seconds: 4));
     // ignore: use_build_context_synchronously
     Navigator.of(context).pushReplacement( MaterialPageRoute(builder:(ctx)=>const MyHomePage()));
   }

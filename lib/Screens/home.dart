@@ -5,6 +5,7 @@ import 'package:netflix_ui/api/api.dart';
 import 'package:netflix_ui/constant.dart';
 import 'package:netflix_ui/models/movies.dart';
 import 'package:netflix_ui/widgets/custom_slider.dart';
+import 'package:netflix_ui/widgets/stacked_slider.dart';
 import 'package:netflix_ui/widgets/tabbar_home.dart';
 import 'package:netflix_ui/widgets/main_card_home.dart';
 
@@ -66,9 +67,15 @@ class _HomePageState extends State<HomePage> {
 
                    CustomSlider(title: "Popular",sliderList: popularMoviesList),
 
+                   CustomSlider1(title: "Top 10", sliderList: trendingList),
+
+                   CustomSlider(title: "Now Playing", sliderList: nowPlayingList),
+
                    CustomSlider(title: "Top Rated",sliderList: trendingList),
                    
-                   CustomSlider(title: "Now Playing", sliderList: nowPlayingList)
+
+
+
                
                 ],
               ),

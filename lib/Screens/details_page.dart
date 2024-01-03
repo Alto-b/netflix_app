@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_ui/api/api.dart';
+import 'package:netflix_ui/constant.dart';
 import 'package:netflix_ui/widgets/custom_slider.dart';
 
 class DetailsPage extends StatefulWidget {
-  const DetailsPage({super.key});
 
+  DetailsPage({super.key,required this.image,required this.title,required this.details});
+  String image;
+  String title;
+  String details;
   @override
   State<DetailsPage> createState() => _DetailsPageState();
 }
 
 class _DetailsPageState extends State<DetailsPage> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +36,13 @@ class _DetailsPageState extends State<DetailsPage> {
               decoration: const BoxDecoration(
                 color: Colors.amber
               ),
+              child: Image.network(
+               widget.image,fit: BoxFit.cover,
+              ),
             ),
             Padding(
               padding:  EdgeInsets.fromLTRB(0, 10, 0, 10),
-              child: Text("title here",style: GoogleFonts.roboto(
+              child: Text(widget.title,style: GoogleFonts.roboto(
                 fontSize: 30,
                 fontWeight: FontWeight.w600
               ),),
@@ -67,9 +76,9 @@ class _DetailsPageState extends State<DetailsPage> {
                 backgroundColor:MaterialStateProperty.all(Colors.grey.shade500),
               ),),
             ),
-            const Padding(
+             Padding(
               padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-              child: Text("data"),//title
+              child: Text(widget.details),//title
             ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

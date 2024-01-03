@@ -39,7 +39,12 @@ class _CustomSliderState extends State<CustomSlider> {
                itemBuilder: (context,index){
                  return GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(
+                      image: imagePath+widget.sliderList[index]['backdrop_path'],
+                      title: widget.sliderList[index]['title'],
+                      details: widget.sliderList[index]['overview'],
+
+                    ),));
                   },
                    child: Padding(
                      padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
