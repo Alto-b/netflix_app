@@ -34,7 +34,7 @@ class _DetailsPageState extends State<DetailsPage> {
             Container(
               height: 250,width: double.infinity,
               decoration: const BoxDecoration(
-                color: Colors.amber
+                color: Colors.grey
               ),
               child: Image.network(
                widget.image,fit: BoxFit.cover,

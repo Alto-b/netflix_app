@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:netflix_ui/constant.dart';
+import 'package:intl/intl.dart';
+
 
 // ignore: must_be_immutable
 class ComingSoon extends StatefulWidget {
@@ -25,9 +27,17 @@ class _ComingSoonState extends State<ComingSoon> {
          SizedBox(width: 50,height: 350,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.list[widget.index]['release_date'],style: TextStyle(fontSize: 20)),
-            Text("15",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w700),)
+            Text(
+           DateFormat('MMM').format(DateTime.parse(widget.list[widget.index]['release_date'])),
+  style: TextStyle(fontSize: 15),
+),
+
+             Text(
+           DateFormat('dd').format(DateTime.parse(widget.list[widget.index]['release_date'])),
+  style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600),
+),
           ],
         ),),
         SizedBox(

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:netflix_ui/Screens/details_page.dart';
 import 'package:netflix_ui/constant.dart';
 
 class EveryonesWatching extends StatefulWidget {
@@ -10,6 +11,7 @@ class EveryonesWatching extends StatefulWidget {
   });
   int index;
   List list;
+
   @override
   State<EveryonesWatching> createState() => _EveryonesWatchingState();
 }
@@ -26,8 +28,17 @@ class _EveryonesWatchingState extends State<EveryonesWatching> {
                 SizedBox(
                   width: double.infinity,
                   height: 300,
-                  child: Image.network(imagePath+widget.list[widget.index]['backdrop_path'],
-                  fit: BoxFit.cover,
+                  child: InkWell(
+                    child: Image.network(imagePath+widget.list[widget.index]['backdrop_path'],
+                    fit: BoxFit.cover,
+                    ),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(
+                       image: imagePath+widget.list[widget.index]['backdrop_path'],
+                        title: widget.list[widget.index]['title'],
+                        details: widget.list[widget.index]['overview'],
+                        ),));
+                    },
                   ),
                 ),
                 Positioned(
