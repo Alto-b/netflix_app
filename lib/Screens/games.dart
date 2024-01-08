@@ -32,13 +32,13 @@ class _GamesPageState extends State<GamesPage> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text("Search Movies"),
-        actions: [
-          IconButton(onPressed: (){
-            setState(() {
+        // actions: [
+        //   IconButton(onPressed: (){
+        //     setState(() {
               
-            });
-          }, icon:Icon(Icons.replay_outlined))
-        ],
+        //     });
+        //   }, icon:Icon(Icons.replay_outlined))
+        // ],
       ),
 
       body:  SingleChildScrollView(

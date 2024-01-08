@@ -75,11 +75,11 @@ Future<void> getNowPlaying()async{
 
 Future<void> getUpcoming()async{
   final response = await http.get(Uri.parse(upcoming));
-  print(response.statusCode);
+  // print(response.statusCode);
   if(response.statusCode == 200){
     var tempData = jsonDecode(response.body);
     List upcomingL = tempData['results'];
-    print("upcoming : ${upcomingL}");
+    // print("upcoming : ${upcomingL}");
     for(int i=0;i<upcomingL.length;i++){
       upcomingList.add({
         'title' : upcomingL[i]['title'],
@@ -96,9 +96,9 @@ Future<void> getUpcoming()async{
 }
 
 Future<void> getAllMovies()async{
-  print("all movies started");
+  // print("all movies started");
   final response = await http.get(Uri.parse(allmovies));
-  print(response.statusCode);
+  // print(response.statusCode);
   if(response.statusCode == 200){
     var tempData = jsonDecode(response.body);
     List allmoviesL = tempData['results'];
